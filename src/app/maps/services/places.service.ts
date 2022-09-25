@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class PlacesService {
     return !!this.userLocation;
   }
 
-  constructor() {
+  constructor( private http: HttpClient ) {
     this.getUserLocation();
   }
 
@@ -29,6 +31,12 @@ export class PlacesService {
         }
       );
     })
+  }
+
+  getPlaces( query: string = '', metros: string = '' ){
+    
+    this.http.get(`https://www.inegi.org.mx/app/api/denue/v1/consulta/buscar/${query}/32.4925757,-116.9088753/${metros}/${environment.TOKEN_INEGI}`)
+    .subscribe( console.log )
   }
   
 }

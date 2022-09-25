@@ -1,0 +1,9 @@
+<div class="search-container {{ clase }}">
+    <input
+        #searchBox 
+        type="text"
+        class="form-control"
+        placeholder="{{ placeholder }}"
+        (keyup)="getSearchParams(searchBox.value)"
+    >
+</div>
