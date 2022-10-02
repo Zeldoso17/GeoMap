@@ -1,19 +1,23 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment'
 
+import { PlacesResponse, Lugares } from '../interfaces'
+import { PlacesApiClient } from '../api'
+import { MapService } from './map.service';
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class PlacesService {
 
   public userLocation?: [number, number];
+  public isLoadingPlaces: boolean = false
+  public places: Lugares[] = [];
   
   get isUserLocationReady(): boolean {
     return !!this.userLocation;
   }
 
-  constructor( private http: HttpClient ) {
+  constructor( private placesApi: PlacesApiClient, private mapService: MapService ) {
     this.getUserLocation();
   }
 
@@ -34,9 +38,23 @@ export class PlacesService {
   }
 
   getPlaces( query: string = '', metros: string = '' ){
-    
-    this.http.get(`https://www.inegi.org.mx/app/api/denue/v1/consulta/buscar/${query}/32.4925757,-116.9088753/${metros}/${environment.TOKEN_INEGI}`)
-    .subscribe( console.log )
+    this.isLoadingPlaces= true
+    let locationReverse = this.userLocation?.reverse().join(',');
+    this.placesApi.get<PlacesResponse>(`/${query}`, {
+      headers: {
+        Authorization: 'Token 6e731f606e058a2eea45e13bbe2b1648a827d0e2'
+      },
+      params: {
+        proximity: locationReverse!,
+        metros: metros!
+      }
+    })
+    .subscribe( resp => {
+      this.isLoadingPlaces = false
+      this.places = resp.lugares
+      this.mapService.createMarkersPlaces(this.places, this.userLocation! )
+    });
+    locationReverse = this.userLocation?.reverse().join(',');
   }
   
 }

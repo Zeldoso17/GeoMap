@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlacesService } from '../../services'
 
 @Component({
   selector: 'app-search-button',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchButtonComponent implements OnInit {
 
-  constructor() { }
+  query!: string;
+  meters!: string;
+
+  constructor( private placesService: PlacesService ) { }
 
   ngOnInit(): void {
+  }
+
+  searchPlace(){
+    console.log('SEARCH PLACE WORKS')
+    this.query = localStorage.getItem('query')!
+    this.meters = localStorage.getItem('meters')!
+    this.placesService.getPlaces(this.query, this.meters)
+    console.log('despues del reciebiendo data')
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchParamsService } from '../../services';
 
 @Component({
   selector: 'app-search-bar',
@@ -14,7 +13,7 @@ export class SearchBarComponent implements OnInit {
   query?: string;
   meters?: string;
 
-  constructor(private searchParamsService: SearchParamsService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -22,9 +21,10 @@ export class SearchBarComponent implements OnInit {
   getSearchParams(value: string) {
     if ( this.clase === 'search' ){
       this.query = value;
-      return
+      localStorage.setItem('query', this.query)
+    }else{
+      this.meters = value;
+      localStorage.setItem('meters', this.meters)
     }
-    this.meters = value;
   }
-
 }

@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapsModule } from './maps/maps.module';
+import { SearchParamsService } from './maps/services'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { MapsModule } from './maps/maps.module';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ SearchParamsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
