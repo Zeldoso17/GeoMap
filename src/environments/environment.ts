@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  TOKEN_INEGI: 'bf06820e-6ddd-494e-9b23-9c71e2e6cf8d'
+  TOKEN_INEGI: 'bf06820e-6ddd-494e-9b23-9c71e2e6cf8d',
+  TOKEN_MAPBOX: 'pk.eyJ1IjoiemVsZG9zbzE3IiwiYSI6ImNsNnZnejRkYjA5OXMzZHBnb280a2FrMW8ifQ.doU1mwipKBsRmjw6RBDdIw'
 };
 
 /*
