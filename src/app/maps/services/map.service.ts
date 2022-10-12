@@ -10,7 +10,9 @@ import { DirectionsResponse, Route } from '../interfaces/directions';
 export class MapService {
 
   private map?: Map;
-  private markers: Marker[] = []
+  private markers: Marker[] = [];
+  public directions = "Direcciones";
+  public direcciones: boolean = false;
 
   constructor(private directionsApi: DirectionsApiClient){ }
 
@@ -56,6 +58,8 @@ export class MapService {
         .addTo( this.map )
         .getElement().addEventListener('click', () => {
           this.getRoute(userLocation, [parseFloat(place.Longitud), parseFloat(place.Latitud)])
+          localStorage.setItem('showDirections', 'true')
+          this.direcciones = true
         })
       newMarkers.push( newMarker );
     }
@@ -79,11 +83,12 @@ export class MapService {
 
     this.directionsApi.get<DirectionsResponse>(`/${ start.join(',') }; ${ end.join(',')} `)
       .subscribe( resp => this.drawPolyline( resp.routes[0] ) )
-
   }
 
   private drawPolyline( route: Route ) {
     console.log({ kms: Math.ceil(route.distance / 1000), duration: Math.ceil(route.duration / 60)})
+    localStorage.setItem('distancia', Math.ceil(route.distance/1000).toString())
+    localStorage.setItem('tiempo', Math.ceil(route.duration / 60).toString())
 
     if ( !this.map ) throw Error('Mapa no inicializado')
 

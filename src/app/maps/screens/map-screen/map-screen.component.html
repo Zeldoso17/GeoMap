@@ -7,5 +7,7 @@
     <app-search-bar [clase]="'search'" [placeholder]="'Buscar Lugares (ej, Farmacias)'"></app-search-bar>
     <app-search-bar [clase]="'metros'" [placeholder]="'Radio de búsqueda (metros)'"></app-search-bar>
     <app-search-button></app-search-button>
+    <app-btn-more-info *ngIf="showDirections === 'true';"></app-btn-more-info>
+    <app-directions *ngIf="showDirections === 'true';"></app-directions>
 </ng-template>
 

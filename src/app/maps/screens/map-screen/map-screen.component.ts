@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlacesService, SearchParamsService } from '../../services';
+import { MapService, PlacesService } from '../../services';
 
 @Component({
   selector: 'app-map-screen',
@@ -8,10 +8,16 @@ import { PlacesService, SearchParamsService } from '../../services';
 })
 export class MapScreenComponent implements OnInit {
 
-  constructor( private placesService: PlacesService, private searchParamsService: SearchParamsService ) { }
+  constructor( private placesService: PlacesService, private mapService: MapService ) { }
+
+  //public showDirections: string = localStorage.getItem('showDirections')!;
 
   get isUserLocationReady() {
     return this.placesService.isUserLocationReady;
+  }
+
+  get showDirections() {
+    return localStorage.getItem('showDirections')
   }
 
   ngOnInit(): void {

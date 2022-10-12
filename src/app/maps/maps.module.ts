@@ -6,6 +6,8 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { BtnMyLocationComponent } from './components/btn-my-location/btn-my-location.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchButtonComponent } from './components/search-button/search-button.component';
+import { DirectionsComponent } from './components/directions/directions.component';
+import { BtnMoreInfoComponent } from './components/btn-more-info/btn-more-info.component';
 
 
 
@@ -16,7 +18,9 @@ import { SearchButtonComponent } from './components/search-button/search-button.
     LoadingComponent,
     BtnMyLocationComponent,
     SearchBarComponent,
-    SearchButtonComponent
+    SearchButtonComponent,
+    DirectionsComponent,
+    BtnMoreInfoComponent
   ],
   imports: [
     CommonModule
