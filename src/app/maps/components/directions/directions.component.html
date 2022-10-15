@@ -9,5 +9,5 @@
             <p class='numero'>{{ getTime }} min</p>
         </div>
     </div>
-    <p class='directions'>JEJEJEJE</p>
+    <p class='directions' *ngFor="let direccion of getDirecciones">{{ direccion }}</p>
 </div>

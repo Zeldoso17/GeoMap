@@ -1,1 +1,3 @@
-<button class="btn btn-primary more-info">Más información</button>
+<app-modal *ngIf="generalService.showDialog"></app-modal>
+
+<button class="btn btn-primary more-info" (click)="generalService.showDialog = true">Más información</button>

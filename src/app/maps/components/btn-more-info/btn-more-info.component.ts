@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from '../../services';
 
 @Component({
   selector: 'app-btn-more-info',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BtnMoreInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public generalService: GeneralService) { }
 
   ngOnInit(): void {
   }

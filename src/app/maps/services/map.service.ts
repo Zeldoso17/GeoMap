@@ -12,7 +12,8 @@ export class MapService {
   private map?: Map;
   private markers: Marker[] = [];
   public directions = "Direcciones";
-  public direcciones: boolean = false;
+  public direccionesBool: boolean = false;
+  public direcciones: Array<String> = []
 
   constructor(private directionsApi: DirectionsApiClient){ }
 
@@ -59,7 +60,7 @@ export class MapService {
         .getElement().addEventListener('click', () => {
           this.getRoute(userLocation, [parseFloat(place.Longitud), parseFloat(place.Latitud)])
           localStorage.setItem('showDirections', 'true')
-          this.direcciones = true
+          this.direccionesBool = true
         })
       newMarkers.push( newMarker );
     }
@@ -89,6 +90,10 @@ export class MapService {
     console.log({ kms: Math.ceil(route.distance / 1000), duration: Math.ceil(route.duration / 60)})
     localStorage.setItem('distancia', Math.ceil(route.distance/1000).toString())
     localStorage.setItem('tiempo', Math.ceil(route.duration / 60).toString())
+
+    this.direcciones = []
+    route.legs[0].steps.forEach( step => this.direcciones.push(step.maneuver.instruction))
+    localStorage.setItem('direcciones', JSON.stringify(this.direcciones))
 
     if ( !this.map ) throw Error('Mapa no inicializado')
 

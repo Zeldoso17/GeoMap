@@ -8,10 +8,11 @@ import { MapService } from '../../services';
 })
 export class DirectionsComponent implements OnInit {
 
-  constructor() { }
+  constructor( private mapService: MapService ) { }
 
   public distancia!: string;
   public tiempo!: string;
+  public direcciones: Array<String> = []
 
   public get getDistance(){
     return localStorage.getItem('distancia')!
@@ -19,6 +20,12 @@ export class DirectionsComponent implements OnInit {
 
   public get getTime(){
     return localStorage.getItem('tiempo')!
+  }
+  public get getDirecciones(){
+    var direcciones = localStorage.getItem("direcciones")!
+    //if ( direcciones.length > 0 ) return []
+    console.log(direcciones)
+    return JSON.parse(direcciones)
   }
 
   ngOnInit(): void {}

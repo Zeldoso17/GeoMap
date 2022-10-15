@@ -8,6 +8,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { SearchButtonComponent } from './components/search-button/search-button.component';
 import { DirectionsComponent } from './components/directions/directions.component';
 import { BtnMoreInfoComponent } from './components/btn-more-info/btn-more-info.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 
@@ -20,7 +21,8 @@ import { BtnMoreInfoComponent } from './components/btn-more-info/btn-more-info.c
     SearchBarComponent,
     SearchButtonComponent,
     DirectionsComponent,
-    BtnMoreInfoComponent
+    BtnMoreInfoComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule
