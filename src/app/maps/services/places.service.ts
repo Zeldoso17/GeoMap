@@ -39,11 +39,12 @@ export class PlacesService {
   }
 
   getPlaces( query: string = '', metros: string = '' ){
+    const token = localStorage.getItem('token')
     this.isLoadingPlaces= true
     let locationReverse = this.userLocation?.reverse().join(',');
     this.placesApi.get<PlacesResponse>(`/${query}`, {
       headers: {
-        Authorization: 'Token 6e731f606e058a2eea45e13bbe2b1648a827d0e2'
+        Authorization: `Token ${token}`
       },
       params: {
         proximity: locationReverse!,
@@ -59,9 +60,10 @@ export class PlacesService {
   }
 
   getPlaceInfo( pk: string = ''){
+    const token = localStorage.getItem('token')
     this.infoPlacesApi.get<Lugares[]>(`/${pk}`, {
       headers: {
-        Authorization: 'Token 6e731f606e058a2eea45e13bbe2b1648a827d0e2'
+        Authorization: `Token ${token}`
       }
     })
     .subscribe( resp => {

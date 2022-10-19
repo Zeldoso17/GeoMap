@@ -1,0 +1,157 @@
+/*:root {
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --azul:#134074;
+    --azulOscuro:#0B2545;
+}*/
+
+$dark: #16191c;
+$dark-x: #1e2126;
+$light: #ffffff;
+$azul: #134074;
+$azulOscuro: #0B2545;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor-register {
+    background-color: $dark;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-box {
+    display: flex;
+    width: 85%;
+    height: 80%;
+    /*top: 30px;*/
+    /*border: 1px solid red;*/
+    background-color: $dark-x;
+}
+
+.mapa {
+    width: 50%;
+    /*border: 1px solid yellow;*/
+    color: $light;
+}
+.mapa img {
+    width: 765px;
+}
+
+.register {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    color: $light;
+}
+
+.register label {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.register h1,
+.register p {
+    position: relative;
+    left: 60px;
+}
+
+.register input {
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+    background-color: $dark-x;
+    color: white;
+    border: 1px solid $azul;
+    padding: 6px;
+}
+
+.register input[type='submit'] {
+    position: relative;
+    top: 50px;
+    background-color: $azul;
+}
+
+.register input[type='submit']:hover {
+    background-color: $dark-x;
+    transition: all .5s ease;
+}
+
+.register input:focus {
+    /*border: 1px solid $azul;*/
+    color: gray;
+}
+
+.register form {
+    display: flex;
+    flex-direction: column;
+}
+
+.double {
+    position: relative;
+    width: 100%;
+    display: flex;
+    left: 60px;
+}
+
+.one {
+    position: relative;
+    top: 20px;
+    left: 60px;
+}
+
+.double .first-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.double .second-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 50px;
+}
+
+.username-phone {
+    position: relative;
+    top: 10px;
+}
+
+.register .email .email-container input {
+    display: flex;
+    width: 73%;
+}
+
+.password-confirm {
+    position: relative;
+    top: 23px;
+}
+
+.register form .boton {
+    position: relative;
+    width: 73%;
+    left: 90px;
+}
+
+.register .iniciaSesion {
+    top: 80px;
+    margin-left: 140px;
+}
+
+.register .iniciaSesion a {
+    text-decoration: none;
+    color: $light;
+    cursor: pointer;
+}
+
+.register .iniciaSesion a:hover {
+    color: lightblue;
+    text-decoration: underline;
+}

@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapsModule } from './maps/maps.module';
 import { SearchParamsService } from './maps/services';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,12 @@ import { SearchParamsService } from './maps/services';
     BrowserModule,
     AppRoutingModule,
     MapsModule,
+    AuthModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ SearchParamsService ],
+  providers: [ SearchParamsService, CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

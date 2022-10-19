@@ -9,6 +9,7 @@ import { SearchButtonComponent } from './components/search-button/search-button.
 import { DirectionsComponent } from './components/directions/directions.component';
 import { BtnMoreInfoComponent } from './components/btn-more-info/btn-more-info.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { BtnLogoutComponent } from './components/btn-logout/btn-logout.component';
 
 
 
@@ -22,7 +23,8 @@ import { ModalComponent } from './components/modal/modal.component';
     SearchButtonComponent,
     DirectionsComponent,
     BtnMoreInfoComponent,
-    ModalComponent
+    ModalComponent,
+    BtnLogoutComponent,
   ],
   imports: [
     CommonModule

@@ -1,0 +1,29 @@
+<div class="conte">
+    <div class="contenedor-formulario contenedor">
+      <div class="imagen-formulario">
+        <img src="../../../../assets/planeta.jpg" alt="HOLA">
+      </div>
+
+      <form class="formulario">
+        <div class="texto-formulario">
+          <h2>Bienvenido de nuevo</h2>
+          <p>Inicia sesión con tu cuenta</p>
+        </div>
+        <div class="input">
+          <label htmlFor="usuario">Nombre de Usuario</label>
+          <input [(ngModel)]="username" placeholder="Ingresa tu usuario" name='username' type="text" id="usuario" />
+        </div>
+        <div class="input">
+          <label htmlFor="contraseña">Contraseña</label>
+          <input [(ngModel)]="password" placeholder="Ingresa tu contraseña" name="password" type="text" id="contraseña" />
+        </div>
+        <div class="password-olvidada">
+          <a>Olvidé mi contraseña</a>
+        </div>
+        <div class="input">
+          <button class="btn btn-primary" (click)="login()">Iniciar Sesión</button>
+          <span> ¿No tienes una cuenta? </span><a routerLink="/registro">Crea una aquí</a>
+        </div>
+      </form>
+    </div>
+  </div>
