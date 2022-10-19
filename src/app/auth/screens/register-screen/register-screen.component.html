@@ -6,49 +6,49 @@
       <div class="register">
         <h1>Crea tu cuenta gratis</h1>
         <p>Ingresa la siguiente información para registrarte.</p>
-        <form onSubmit={handleSubmit}>
+        <form>
           <!--{ /* Inputs para el NOMBRE y los APELLIDOS */}-->
           <div class="double">
             <div class="first-container">
               <label htmlFor="name">Nombre: </label>
-              <input type="text" onChange={handleInputChange} placeholder='Introduce tu nombre' name="nombre" id="" />
+              <input type="text" [(ngModel)]="nombre" placeholder='Introduce tu nombre' name="nombre" id="" />
             </div>
             <div class="second-container">
               <label htmlFor="name">Apellidos: </label>
-              <input type="text" onChange={handleInputChange} placeholder='Introduce tus apellidos' name="apellido" id="" />
+              <input type="text" [(ngModel)]="apellido" placeholder='Introduce tus apellidos' name="apellido" id="" />
             </div>
           </div>
           <!--{ /* Inputs para el USERNAME y el Telefono */}-->
           <div class="double username-phone">
             <div class="first-container">
               <label htmlFor="name">Nombre de Usuario: </label>
-              <input type="text" onChange={handleInputChange} placeholder='Introduce tu usuario' name="username" id="" />
+              <input type="text" [(ngModel)]="username" placeholder='Introduce tu usuario' name="username" id="" />
             </div>
             <div class="second-container">
               <label htmlFor="name">Telefono: </label>
-              <input type="text" onChange={handleInputChange} placeholder='Introduce tu telefono' name="telefono" id="" />
+              <input type="text" [(ngModel)]="telefono" placeholder='Introduce tu telefono' name="telefono" id="" />
             </div>
           </div>
           <!--{ /* Input para el CORREO */}-->
           <div class="one email">
             <div class="first-container email-container">
               <label htmlFor="name">Correo Electrónico: </label>
-              <input type="email" onChange={handleInputChange} placeholder='Introduce tu email' name="email" id="" />
+              <input type="email" [(ngModel)]="email" placeholder='Introduce tu email' name="email" id="" />
             </div>
           </div>
           <!--{ /* Inputs para la CONTRASEÑA y la confirmación de CONTRASEÑA */}-->
           <div class="double password-confirm">
             <div class="first-container">
               <label htmlFor="name">Contraseña: </label>
-              <input type="text" onChange={handleInputChange} placeholder='Introduce tu contraseña' name="password" id="" />
+              <input type="text" [(ngModel)]="password" placeholder='Introduce tu contraseña' name="password" id="" />
             </div>
             <div class="second-container">
               <label htmlFor="name">Confirmar contraseña: </label>
-              <input type="text" onChange={handleInputChange} placeholder='Repite tu contraseña' name="password2" />
+              <input type="text" [(ngModel)]="password2" placeholder='Repite tu contraseña' name="password2" />
             </div>
           </div>
           <!--{/* Boton de registrate */}-->
-          <input type="submit" class='boton' value="Registrarme" />
+          <button (click)="registrar()" class='btn btn-primary boton'>Registrarme</button>
         </form>
         <p class='iniciaSesion'>¿Ya tienes una cuenta? <a routerLink="/login">inicia sesión aquí</a></p>
       </div>

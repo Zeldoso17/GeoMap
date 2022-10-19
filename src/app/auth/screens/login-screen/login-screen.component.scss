@@ -121,6 +121,14 @@ $azulOscuro: #0B2545;
     background-color: $azul;
 }
 
+.input .boton {
+    position: relative;
+    width: 73%;
+    height: 50px;
+    left: 60px;
+    //top: 50px;
+}
+
 span {
     color: $light;
 }

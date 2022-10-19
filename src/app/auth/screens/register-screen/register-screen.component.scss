@@ -42,7 +42,8 @@ $azulOscuro: #0B2545;
     color: $light;
 }
 .mapa img {
-    width: 765px;
+    width: 720px;
+    height: 100%;
 }
 
 .register {
@@ -137,7 +138,9 @@ $azulOscuro: #0B2545;
 .register form .boton {
     position: relative;
     width: 73%;
+    height: 50px;
     left: 90px;
+    top: 50px;
 }
 
 .register .iniciaSesion {
